@@ -5226,16 +5226,6 @@
 		)
 		(uuid "0f37df4a-b26e-493d-a5df-e3c79f6891d6")
 	)
-	(label "CSNS2_IN"
-		(at 118.11 93.98 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "1147f909-6651-4a77-b80d-346bdced560e")
-	)
 	(label "H2"
 		(at 118.11 86.36 0)
 		(effects
@@ -5285,6 +5275,26 @@
 			(justify left bottom)
 		)
 		(uuid "325cce5b-7045-44b4-beb1-a2743af45f12")
+	)
+	(label "CSNS_B"
+		(at 118.11 91.44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3a01d906-83e4-4310-a14c-6ed2feda88b3")
+	)
+	(label "CSD_A"
+		(at 92.71 170.18 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "47547787-9adf-4e4e-b8c3-7ed8b13a8ad9")
 	)
 	(label "H1"
 		(at 118.11 81.28 0)
@@ -5346,6 +5356,16 @@
 		)
 		(uuid "858b1539-f7b0-46fb-9a6f-4dfa7ef0678c")
 	)
+	(label "CSD_B"
+		(at 140.97 170.18 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "8878b9de-df8c-4b8c-aff7-dc394ba3bdc6")
+	)
 	(label "UPDI"
 		(at 124.46 76.2 0)
 		(effects
@@ -5356,7 +5376,7 @@
 		)
 		(uuid "92d786e5-329d-439b-890e-c10a7565f6b9")
 	)
-	(label "CSNS2_IN"
+	(label "CSNS_B"
 		(at 153.67 170.18 0)
 		(effects
 			(font
@@ -5366,15 +5386,15 @@
 		)
 		(uuid "99ca5628-023a-4005-b96a-a24781b23f55")
 	)
-	(label "CSNS1_IN"
-		(at 118.11 91.44 0)
+	(label "CSNS_A"
+		(at 118.11 93.98 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "9df4e2c8-7280-414b-95c6-a73f74c90fdb")
+		(uuid "ccf0b60f-ab94-442c-ad00-042bedf47acb")
 	)
 	(label "SHNT1"
 		(at 173.99 121.92 0)
@@ -5386,7 +5406,7 @@
 		)
 		(uuid "cde42064-f447-4132-a56e-f2dcf98e1c31")
 	)
-	(label "CSNS1_IN"
+	(label "CSNS_A"
 		(at 99.06 161.29 90)
 		(effects
 			(font
