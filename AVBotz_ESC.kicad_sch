@@ -2420,7 +2420,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "PCM_SparkFun-DiscreteSemi:D_TVS_SMA_93.6V"
+		(symbol "PCM_SparkFun-DiscreteSemi:D_TVS"
 			(pin_numbers
 				(hide yes)
 			)
@@ -2443,7 +2443,7 @@
 					)
 				)
 			)
-			(property "Value" "SMAJ58A"
+			(property "Value" "TVS"
 				(at 0 -2.54 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2453,7 +2453,7 @@
 					)
 				)
 			)
-			(property "Footprint" "PCM_SparkFun-Semiconductor-Standard:SMA"
+			(property "Footprint" "PCM_SparkFun-Semiconductor-Standard:SOT-363"
 				(at 0 -7.62 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2464,7 +2464,7 @@
 					)
 				)
 			)
-			(property "Datasheet" "https://www.st.com/content/ccc/resource/technical/document/datasheet/ff/c0/80/cc/19/4c/45/af/CD00001333.pdf/files/CD00001333.pdf/_jcr_content/translations/en.CD00001333.pdf"
+			(property "Datasheet" ""
 				(at 0 -12.7 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2475,7 +2475,7 @@
 					)
 				)
 			)
-			(property "Description" "Unidirectional transient-voltage-suppression diode 93.6V"
+			(property "Description" "Bidirectional transient-voltage-suppression diode"
 				(at 0 -5.08 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2486,7 +2486,7 @@
 					)
 				)
 			)
-			(property "PROD_ID" "DIO-26160"
+			(property "PROD_ID" "IC-"
 				(at 0 -10.16 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2519,7 +2519,19 @@
 					)
 				)
 			)
-			(symbol "D_TVS_SMA_93.6V_0_1"
+			(symbol "D_TVS_0_1"
+				(polyline
+					(pts
+						(xy -1.27 1.016) (xy -1.27 -1.016) (xy 1.27 1.016) (xy 1.27 -1.016) (xy -1.27 1.016)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 				(polyline
 					(pts
 						(xy -1.27 0) (xy 1.27 0)
@@ -2534,19 +2546,7 @@
 				)
 				(polyline
 					(pts
-						(xy -0.635 0) (xy -0.635 0) (xy 0.635 1.016) (xy 0.635 -1.016) (xy -0.635 0)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.127 1.016) (xy -0.635 1.016) (xy -0.635 -1.016) (xy -1.143 -1.016)
+						(xy 0.508 1.016) (xy 0 1.016) (xy 0 -1.016) (xy -0.508 -1.016)
 					)
 					(stroke
 						(width 0.254)
@@ -2557,11 +2557,11 @@
 					)
 				)
 			)
-			(symbol "D_TVS_SMA_93.6V_1_1"
+			(symbol "D_TVS_1_1"
 				(pin passive line
 					(at -2.54 0 0)
 					(length 1.27)
-					(name "K"
+					(name "A1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2579,7 +2579,7 @@
 				(pin passive line
 					(at 2.54 0 180)
 					(length 1.27)
-					(name "A"
+					(name "A2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3885,6 +3885,12 @@
 		(uuid "6bde6457-882b-4680-b5c8-454962267095")
 	)
 	(junction
+		(at 138.43 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6c6dc793-a7de-4bfb-ac9c-5274aa061f33")
+	)
+	(junction
 		(at 157.48 82.55)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3937,6 +3943,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ea1af39b-4f27-4bdc-acdc-e486d7f51816")
+	)
+	(junction
+		(at 138.43 129.54)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ea91e29f-ee82-48e2-90ba-f36e14c3bde8")
 	)
 	(junction
 		(at 173.99 99.06)
@@ -4421,6 +4433,16 @@
 			(type default)
 		)
 		(uuid "8edc744b-0c2d-494e-83d4-93497e5fb91c")
+	)
+	(wire
+		(pts
+			(xy 138.43 97.79) (xy 138.43 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8fe5972e-a0f5-496b-b005-55c8dbb6de4c")
 	)
 	(wire
 		(pts
@@ -5369,6 +5391,84 @@
 			(project "AVBotz_ESC"
 				(path "/40a7d472-403e-4671-a0c9-b27554a188a0"
 					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SparkFun-PowerSymbol:GND")
+		(at 138.43 92.71 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "11fa1fe4-a7dd-4bac-b785-5ee62dc74537")
+		(property "Reference" "#PWR031"
+			(at 138.43 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 138.43 88.9 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 138.43 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 138.43 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 138.43 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "89ef996b-ac7a-4400-b7b3-9be520ef847c")
+		)
+		(instances
+			(project "AVBotz_ESC"
+				(path "/40a7d472-403e-4671-a0c9-b27554a188a0"
+					(reference "#PWR031")
 					(unit 1)
 				)
 			)
@@ -6828,6 +6928,84 @@
 		)
 	)
 	(symbol
+		(lib_id "PCM_SparkFun-PowerSymbol:GND")
+		(at 138.43 124.46 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6a8fff5b-2c4c-483a-b2d9-836aef424942")
+		(property "Reference" "#PWR032"
+			(at 138.43 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 138.43 120.65 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 138.43 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 138.43 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 138.43 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a73b6896-c077-4587-af01-61e4c4d37e53")
+		)
+		(instances
+			(project "AVBotz_ESC"
+				(path "/40a7d472-403e-4671-a0c9-b27554a188a0"
+					(reference "#PWR032")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PCM_SparkFun-DiscreteSemi:Q_NMOS_5.8A_30V")
 		(at 228.6 111.76 0)
 		(unit 1)
@@ -7421,7 +7599,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PCM_SparkFun-Connector:JST_1x03_P1.0mm_Horizontal_SMD"
 			(at 250.19 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -8640,7 +8818,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PCM_SparkFun-Connector:JST_1x04_P1.0mm_Horizontal_SMD"
 			(at 39.37 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -8689,6 +8867,99 @@
 			(project "AVBotz_ESC"
 				(path "/40a7d472-403e-4671-a0c9-b27554a188a0"
 					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SparkFun-DiscreteSemi:D_TVS")
+		(at 48.26 54.61 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9f447704-34b0-40f0-97a1-09c23a27af6e")
+		(property "Reference" "D2"
+			(at 50.8 53.3399 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "TVS"
+			(at 50.8 55.8799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "PCM_SparkFun-Semiconductor-Standard:SOT-363"
+			(at 55.88 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Bidirectional transient-voltage-suppression diode"
+			(at 53.34 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PROD_ID" "IC-"
+			(at 58.42 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "00db63f7-f262-4766-8a4a-f744f03fcfa9")
+		)
+		(pin "1"
+			(uuid "12dad525-61e6-403c-acc7-62f3c00ce412")
+		)
+		(instances
+			(project "AVBotz_ESC"
+				(path "/40a7d472-403e-4671-a0c9-b27554a188a0"
+					(reference "D2")
 					(unit 1)
 				)
 			)
@@ -8899,6 +9170,121 @@
 		)
 	)
 	(symbol
+		(lib_id "PCM_SparkFun-Capacitor:0.1uF_0402_16V_10%")
+		(at 138.43 127 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a7e6f3e9-a7b5-476e-918c-02e6cdd4cc12")
+		(property "Reference" "C12"
+			(at 140.97 123.1835 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 140.97 125.7235 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "PCM_SparkFun-Capacitor:C_0402_1005Metric"
+			(at 138.43 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://cdn.sparkfun.com/assets/8/a/4/a/5/Kemet_Capacitor_Datasheet.pdf"
+			(at 138.43 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 138.43 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PROD_ID" "CAP-25565"
+			(at 138.43 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Voltage" "16V"
+			(at 140.97 128.2635 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Tolerance" "10%"
+			(at 140.97 130.8035 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "2"
+			(uuid "4bd627d2-f0c8-454d-829c-5d9f9b1af775")
+		)
+		(pin "1"
+			(uuid "21c236db-69aa-43e8-a2d0-3b5caed35e5d")
+		)
+		(instances
+			(project "AVBotz_ESC"
+				(path "/40a7d472-403e-4671-a0c9-b27554a188a0"
+					(reference "C12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:GND")
 		(at 63.5 172.72 0)
 		(unit 1)
@@ -9049,6 +9435,121 @@
 			(project "AVBotz_ESC"
 				(path "/40a7d472-403e-4671-a0c9-b27554a188a0"
 					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SparkFun-Capacitor:0.1uF_0402_16V_10%")
+		(at 138.43 95.25 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "aecbe99b-5661-418b-bc0d-50124e92b88c")
+		(property "Reference" "C11"
+			(at 140.97 91.4335 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 140.97 93.9735 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "PCM_SparkFun-Capacitor:C_0402_1005Metric"
+			(at 138.43 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://cdn.sparkfun.com/assets/8/a/4/a/5/Kemet_Capacitor_Datasheet.pdf"
+			(at 138.43 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 138.43 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PROD_ID" "CAP-25565"
+			(at 138.43 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Voltage" "16V"
+			(at 140.97 96.5135 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Tolerance" "10%"
+			(at 140.97 99.0535 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "2"
+			(uuid "487e411f-ce34-4cbc-8c7c-30f51442a0a8")
+		)
+		(pin "1"
+			(uuid "e9415ac7-9065-43b6-8c29-e2c2dbe1cacf")
+		)
+		(instances
+			(project "AVBotz_ESC"
+				(path "/40a7d472-403e-4671-a0c9-b27554a188a0"
+					(reference "C11")
 					(unit 1)
 				)
 			)
@@ -9627,99 +10128,6 @@
 			(project "AVBotz_ESC"
 				(path "/40a7d472-403e-4671-a0c9-b27554a188a0"
 					(reference "C6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PCM_SparkFun-DiscreteSemi:D_TVS_SMA_93.6V")
-		(at 48.26 54.61 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "cd23cd63-1521-4a05-bb67-7e54fc084dcc")
-		(property "Reference" "D1"
-			(at 50.8 53.3399 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "SMAJ58A"
-			(at 50.8 55.8799 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "PCM_SparkFun-Semiconductor-Standard:SMA"
-			(at 55.88 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.st.com/content/ccc/resource/technical/document/datasheet/ff/c0/80/cc/19/4c/45/af/CD00001333.pdf/files/CD00001333.pdf/_jcr_content/translations/en.CD00001333.pdf"
-			(at 60.96 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unidirectional transient-voltage-suppression diode 93.6V"
-			(at 53.34 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "PROD_ID" "DIO-26160"
-			(at 58.42 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "56e9fc33-2d9d-404f-84cf-125c44d1c8d2")
-		)
-		(pin "1"
-			(uuid "1cac7c67-aa0f-40dc-9671-cac2134db591")
-		)
-		(instances
-			(project "AVBotz_ESC"
-				(path "/40a7d472-403e-4671-a0c9-b27554a188a0"
-					(reference "D1")
 					(unit 1)
 				)
 			)
