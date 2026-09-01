@@ -23,8 +23,7 @@ static const uint8_t PHASE_TABLE[6][2] = {
     {1, 2},
     {1, 0},
     {2, 0},
-    {2, 1}
-};
+    {2, 1}};
 
 static uint8_t g_comm_step = 0;
 
@@ -32,18 +31,19 @@ static void set_high_side_pwm(uint8_t phase, uint16_t duty)
 {
     uint16_t safeDuty = duty > PWM_PERIOD ? PWM_PERIOD : duty;
 
-    switch (phase) {
-        case 0:
-            TCA0.SINGLE.CMP0 = safeDuty;
-            break;
-        case 1:
-            TCA0.SINGLE.CMP1 = safeDuty;
-            break;
-        case 2:
-            TCA0.SINGLE.CMP2 = safeDuty;
-            break;
-        default:
-            break;
+    switch (phase)
+    {
+    case 0:
+        TCA0.SINGLE.CMP0 = safeDuty;
+        break;
+    case 1:
+        TCA0.SINGLE.CMP1 = safeDuty;
+        break;
+    case 2:
+        TCA0.SINGLE.CMP2 = safeDuty;
+        break;
+    default:
+        break;
     }
 }
 
@@ -51,18 +51,19 @@ static void set_low_side(uint8_t phase, bool active)
 {
     uint8_t pin = 0;
 
-    switch (phase) {
-        case 0:
-            pin = L1;
-            break;
-        case 1:
-            pin = L2;
-            break;
-        case 2:
-            pin = L3;
-            break;
-        default:
-            return;
+    switch (phase)
+    {
+    case 0:
+        pin = L1;
+        break;
+    case 1:
+        pin = L2;
+        break;
+    case 2:
+        pin = L3;
+        break;
+    default:
+        return;
     }
 
     digitalWrite(pin, active ? LOW : HIGH);
@@ -82,7 +83,7 @@ static void all_phases_off(void)
 static void apply_commutation(uint16_t duty)
 {
     const uint8_t high = PHASE_TABLE[g_comm_step][0];
-    const uint8_t low  = PHASE_TABLE[g_comm_step][1];
+    const uint8_t low = PHASE_TABLE[g_comm_step][1];
 
     all_phases_off();
     set_high_side_pwm(high, duty);
@@ -117,10 +118,12 @@ static uint16_t adc_read_channel(uint8_t muxPos)
 {
     uint32_t sum = 0;
 
-    for (uint8_t i = 0; i < ADC_SAMPLES; ++i) {
+    for (uint8_t i = 0; i < ADC_SAMPLES; ++i)
+    {
         ADC0.MUXPOS = muxPos;
         ADC0.COMMAND = ADC_START_IMMEDIATE_gc;
-        while (!(ADC0.INTFLAGS & ADC_RESRDY_bm)) {
+        while (!(ADC0.INTFLAGS & ADC_RESRDY_bm))
+        {
             ;
         }
         ADC0.INTFLAGS = ADC_RESRDY_bm;
@@ -133,10 +136,12 @@ static uint16_t adc_read_channel(uint8_t muxPos)
 static uint16_t read_throttle_pwm_percent(void)
 {
     const float duty = getDutyCycle(PWM);
-    if (duty < 0.0f) {
+    if (duty < 0.0f)
+    {
         return 0;
     }
-    if (duty > 100.0f) {
+    if (duty > 100.0f)
+    {
         return 100;
     }
     return (uint16_t)duty;
@@ -178,28 +183,35 @@ void loop()
     const uint16_t currentSense = adc_read_channel(ADC_MUXPOS_AIN7_gc);
     const uint16_t bemfSense = adc_read_channel(ADC_MUXPOS_AIN6_gc);
 
-    if (millis() - lastStepMs > 4) {
-        if (throttlePct > 5U) {
+    if (millis() - lastStepMs > 4)
+    {
+        if (throttlePct > 5U)
+        {
             g_comm_step = (g_comm_step + 1U) % 6U;
-        } else {
+        }
+        else
+        {
             g_comm_step = 0U;
             all_phases_off();
         }
         lastStepMs = millis();
     }
 
-    if (throttlePct <= 5U) {
+    if (throttlePct <= 5U)
+    {
         all_phases_off();
         lastDuty = 0;
         return;
     }
 
-    if (duty > PWM_MIN && duty != lastDuty) {
+    if (duty > PWM_MIN && duty != lastDuty)
+    {
         apply_commutation(duty);
         lastDuty = duty;
     }
 
-    if (currentSense > 3800U || bemfSense > 3900U) {
+    if (currentSense > 3800U || bemfSense > 3900U)
+    {
         all_phases_off();
         g_comm_step = 0U;
     }
