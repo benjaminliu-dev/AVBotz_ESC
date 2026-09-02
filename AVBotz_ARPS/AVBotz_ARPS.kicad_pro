@@ -41,7 +41,7 @@
         "pads": {
           "drill": 0.8,
           "height": 1.27,
-          "width": 1.27
+          "width": 2.54
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -69,13 +69,7 @@
           "thermal_relief_spoke_width": 0.5
         }
       },
-      "diff_pair_dimensions": [
-        {
-          "gap": 0.0,
-          "via_gap": 0.0,
-          "width": 0.0
-        }
-      ],
+      "diff_pair_dimensions": [],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -209,12 +203,7 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [
-        0.0,
-        0.4,
-        1.0,
-        2.5
-      ],
+      "track_widths": [],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
           "corner_radius_percentage": 80,
@@ -241,12 +230,7 @@
           "spacing": 0.6
         }
       },
-      "via_dimensions": [
-        {
-          "diameter": 0.0,
-          "drill": 0.0
-        }
-      ],
+      "via_dimensions": [],
       "zones_allow_external_fillets": false
     },
     "ipc2581": {
@@ -504,7 +488,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "AVBotz_ESC.kicad_pro",
+    "filename": "AVBotz_ARPS.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -524,7 +508,7 @@
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2,
         "tuning_profile": "",
-        "via_diameter": 0.5,
+        "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
       }
@@ -652,14 +636,6 @@
     "meta": {
       "version": 1
     },
-    "ngspice": {
-      "fix_include_paths": true,
-      "meta": {
-        "version": 0
-      },
-      "model_mode": 4,
-      "workbook_filename": ""
-    },
     "page_layout_descr_file": "",
     "plot_directory": "",
     "reuse_designators": true,
@@ -667,18 +643,18 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "AVBotz_ESC.kicad_sch",
-        "name": "Root",
-        "uuid": "40a7d472-403e-4671-a0c9-b27554a188a0"
+        "filename": "AVBotz_ARPS.kicad_sch",
+        "name": "AVBotz_ARPS",
+        "uuid": "b3d03f45-d428-40fb-96b7-e9079833baa0"
       }
     ],
-    "used_designators": "#PWR23,Q7,H1-4",
+    "used_designators": "Q1-3",
     "variants": []
   },
   "sheets": [
     [
-      "40a7d472-403e-4671-a0c9-b27554a188a0",
-      "Root"
+      "b3d03f45-d428-40fb-96b7-e9079833baa0",
+      "AVBotz_ARPS"
     ]
   ],
   "text_variables": {},
